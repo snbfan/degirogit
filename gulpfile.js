@@ -6,10 +6,10 @@
         $ = require('gulp-load-plugins')(),
         del = require('del'),
 
-        browserify = require('browserify'),
-        babelify = require('babelify'),
-        source = require('vinyl-source-stream'),
-        buffer = require('vinyl-buffer'),
+        //browserify = require('browserify'),
+        //babelify = require('babelify'),
+        //source = require('vinyl-source-stream'),
+        //buffer = require('vinyl-buffer'),
 
         karmaServer = require('karma').Server,
         gulpProtractorAngular = require('gulp-angular-protractor'),
@@ -115,7 +115,7 @@
     gulp.task('build-html', function () {
         var dest = 'dist/';
 
-        return gulp.src('index.html')
+        return gulp.src('src/index.html')
             .pipe($.htmlReplace({
                 'css': 'styles/' + minifiedCssFileName,
                 'js': 'scripts/' + minifiedJsFileName
