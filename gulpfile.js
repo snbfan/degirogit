@@ -6,10 +6,10 @@
         $ = require('gulp-load-plugins')(),
         del = require('del'),
 
-        //browserify = require('browserify'),
-        //babelify = require('babelify'),
-        //source = require('vinyl-source-stream'),
-        //buffer = require('vinyl-buffer'),
+        browserify = require('browserify'),
+        babelify = require('babelify'),
+        source = require('vinyl-source-stream'),
+        buffer = require('vinyl-buffer'),
 
         karmaServer = require('karma').Server,
         gulpProtractorAngular = require('gulp-angular-protractor'),
@@ -95,22 +95,9 @@
         var src = ['src/scripts/app.js', 'src/scripts/**/*.js'],
             dest = 'dist/scripts';
 
-        //var bundler = browserify(['./src/scripts/app.js'], { debug: true })
-        //    .transform(babelify);
-        //
-        //return bundler.bundle()
-        //    .on('error', function (err) {
-        //        console.error('Browserify Error', err);
-        //        this.emit('end');
-        //    })
-        //    .pipe(source(minifiedJsFileName))
-        //    .pipe(buffer())
-        //    .pipe(gulp.dest(dest));
-
-
         return gulp.src(src)
             .pipe($.babel({
-                presets: ['es2015']
+                presets: ['babel-preset-es2015-script']
             }))
             .pipe($.concat(minifiedJsFileName))
             .pipe($.uglify({mangle:false}))

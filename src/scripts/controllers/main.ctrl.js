@@ -2,7 +2,7 @@
 angular.module('degirogit').controller('MainController', function($scope, $location, GithubSrv) {
     'use strict';
 
-    const self = this;
+    var self = this;
 
     // number of buttons in pagination
     self.pagesInPager = 4;
@@ -214,4 +214,3 @@ angular.module('degirogit').controller('MainController', function($scope, $locat
 
     self.start();
 });
-

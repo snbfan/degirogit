@@ -13,7 +13,7 @@ angular.module('degirogit').service('GithubSrv', function($q, $http) {
         method: 'GET',
         url: 'https://api.github.com/search/repositories',
         headers: {
-            'Authorization': 'token 4b9d035f6877581421565317bfa35ed835cdf1a6'
+            'Authorization': 'token e58090400c6f10ae1ed7ce613a6cdc31eff2cf81'
         }
     };
 
