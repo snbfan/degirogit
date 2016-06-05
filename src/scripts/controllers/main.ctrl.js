@@ -98,6 +98,7 @@ angular.module('degirogit').controller('MainController', function($scope, $locat
             $scope.repos = response.data;
             self.processPaging(response.headers);
         }, (error) => {
+            $scope.repos = [];
             //console.warn(error);
         }).finally(() => {
             self.hideSpinner();
