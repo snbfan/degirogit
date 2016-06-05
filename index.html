@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Degiro Github App</title>
+    <base href="degiro">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet">
+    <!-- build:css -->
+    <link href="dist/styles/degirogit.min.css" rel="stylesheet">
+    <!-- endbuild -->
+</head>
+<body ng-app="degirogit" ng-cloak class="container">
+    <div ng-controller="MainController">
+        <div class="center-block">
+            <form class="form-inline">
+                <div class="form-group">
+                    <label for="language">{{text.language}}:&nbsp;</label>
+                    <select name="language" id="language" ng-model="model.language" ng-change="model.page = 1">
+                        <option ng-repeat="lang in options.language">{{lang}}</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="from">{{text.from}}&nbsp;</label>
+                    <input type="text" class="form-control input-sm" id="from"
+                           ng-model="model.from"
+                           ng-model-options="{ updateOn: 'default blur', debounce: { 'default': 1000, 'blur': 0 } }"
+                           ng-change="model.page = 1"
+                           placeholder="{{defaults.from}}">
+                </div>
+
+                <div class="form-group">
+                    <label for="to">{{text.to}}&nbsp;</label>
+                    <input type="text" class="form-control input-sm" id="to"
+                           ng-model="model.to"
+                           ng-model-options="{ updateOn: 'default blur', debounce: { 'default': 1000, 'blur': 0 } }"
+                           ng-change="model.page = 1"
+                           placeholder="{{defaults.to}}">
+                </div>
+
+                <div class="form-group">
+                    <label for="per_page">{{text.perpage}}&nbsp;</label>
+                    <select name="per_page" id="per_page"
+                            ng-model="model.per_page"
+                            ng-change="model.page = 1">
+                        <option ng-repeat="perpage in options['per_page']">{{perpage}}</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    &nbsp;<span ng-show="spinner" class="glyphicon glyphicon-repeat fast-right-spinner"></span>
+                </div>
+            </form>
+            <br>
+            <div id="noresults" ng-if="repos.length === 0"><h3>{{text.noresults}}</h3></div>
+            <table class="table" ng-if="repos.length > 0">
+                    <thead><td>{{text.id}}</td><td>{{text.reponame}}</td><td>{{text.language}}</td><td>{{text.login}}</td></thead>
+                    <tbody>
+                        <tr ng-repeat="repo in repos track by $index"><td>{{repo.id}}</td><td>{{repo.full_name}}</td><td>{{repo.language}}</td><td>{{repo.owner.login}}</td></tr>
+                    </tbody>
+                </table>
+            <nav ng-if="repos.length > 0">
+                    <ul class="pagination">
+                        <li ng-class="{'disabled': model.page === 1}"><a href="" ng-click="moveToPage(model.page - 1)"><span aria-hidden="true">&laquo;</span></a></li>
+                        <li ng-repeat="page in pagesRange" ng-class="{'active': page == model.page}" ng-click="moveToPage(page)"><a href="">{{page}}</a></li>
+                        <li ng-class="{'disabled': model.page === maxPage}"><a href="" ng-click="moveToPage(model.page + 1)"><span aria-hidden="true">&raquo;</span></a></li>
+                    </ul>
+                </nav>
+        </div>
+    </div>
+
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.3/angular.min.js"></script>
+    <!-- build:js -->
+    <script type="text/javascript" src="src/scripts/app.js"></script>
+    <script type="text/javascript" src="src/scripts/controllers/main.ctrl.js"></script>
+    <script type="text/javascript" src="src/scripts/services/github.srv.js"></script>
+    <!-- endbuild -->
+</body>
+</html>
