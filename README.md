@@ -30,10 +30,12 @@ Add the filters block the table:
 
 All filters and number of the page should sync with URL params. 
 
-From [__] To [__] Language [Javascript (v)] Page [25 (v)]
+From [ . . . . ]   To [ . . . . ]   Language [Javascript (v)]   Page [25 (v)]
 
 Id  | Repo name | Language    | Owner login
+
 1   | reponame  | javascript  | login
+
 ......
 
 < 1 2 3 4 >                 
