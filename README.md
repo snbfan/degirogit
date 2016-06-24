@@ -12,4 +12,8 @@ gulp test-all
 gulp build-all 
 
 ### Built project
-/dist/index.html
+/dist/*
+
+### Run the project
+1. cd dist && ws
+2. Open http://127.0.0.1:8000 in browser

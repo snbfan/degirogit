@@ -27,6 +27,7 @@
     "karma-chrome-launcher": "^1.0.1",
     "karma-jasmine": "^1.0.2",
     "karma-phantomjs-launcher": "^1.0.0",
+    "local-web-server": "^1.2.6",
     "phantomjs-prebuilt": "^2.1.7",
     "protractor": "^1.0.0",
     "run-sequence": "^1.1.0"
