@@ -12,10 +12,12 @@ gulp test-all
 gulp build-all 
 
 ### Run the project
+0. You must generate your own personal access key for Github API here: https://github.com/settings/tokens/new and then paste it into github.srv.js
+
 1. cd dist && ws
 2. Open http://127.0.0.1:8000 in browser
 
-### The task
+### The App
 
 SPA with simple style integrates with the Github Public API (see htts://developer.github.corn/v3/). 
 Shows a table of Github public repositories. 
