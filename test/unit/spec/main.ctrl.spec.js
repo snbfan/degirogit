@@ -6,7 +6,7 @@ describe('Tests for main.ctrl.js : ', function () {
         incorrectUrlHash = {location: {hash:hash}};
 
     beforeEach(function () {
-        module('degirogit');
+        module('clientgit');
 
         angular.mock.module(function($provide) {
             $provide.value('document', incorrectUrlHash);

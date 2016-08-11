@@ -1,4 +1,4 @@
 /* global angular */
-angular.module('degirogit', []).config(($locationProvider) => {
+angular.module('clientgit', []).config(($locationProvider) => {
     $locationProvider.html5Mode(true);
 });

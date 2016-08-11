@@ -1,7 +1,7 @@
 {
-  "name": "degirogit",
+  "name": "clientgit",
   "version": "0.0.1",
-  "description": "Degiro Git App",
+  "description": "Client Git App",
   "devDependencies": {
     "angular": "^1.5.6",
     "angular-mocks": "^1.5.6",

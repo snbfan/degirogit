@@ -1,4 +1,4 @@
-describe('Degiro Git App', function() {
+describe('Client Git App', function() {
 
     var spinnerCSS = 'span.fast-right-spinner',
         tableCSS = 'table.table',
@@ -10,7 +10,7 @@ describe('Degiro Git App', function() {
         noresultsCSS = '#noresults',
 
         // this is where Webstorm opens my page
-        localhostUrl = 'http://localhost:63342/degirogit/dist/index.html';
+        localhostUrl = 'http://localhost:63342/clientgit/dist/index.html';
 
 
     describe('when page is loaded:', function() {

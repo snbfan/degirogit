@@ -1,5 +1,5 @@
 /* global angular */
-angular.module('degirogit').service('GithubSrv', function($q, $http) {
+angular.module('clientgit').service('GithubSrv', function($q, $http) {
     'use strict';
 
     var self = this;

@@ -15,7 +15,7 @@
         gulpProtractorAngular = require('gulp-angular-protractor'),
         runSequence = require('run-sequence'),
 
-        projectName = 'degirogit',
+        projectName = 'clientgit',
         minifiedCssFileName = projectName + '.min.css',
         minifiedJsFileName =  projectName + '.min.js';
 

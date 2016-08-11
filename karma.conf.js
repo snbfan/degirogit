@@ -24,7 +24,7 @@ module.exports = function(config) {
       //, 'src/scripts/app.js'
       //, 'src/scripts/controllers/*.js'
       //, 'src/scripts/services/*.js'
-      , 'dist/scripts/degirogit.min.js'
+      , 'dist/scripts/clientgit.min.js'
 
       // test specs
       , 'test/unit/spec/**/*.spec.js'
